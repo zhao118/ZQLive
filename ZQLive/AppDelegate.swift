@@ -14,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+     
+        //一启动就进行全局的设置UITabBar点击item时的颜色为橙色.d6
+        UITabBar.appearance().tintColor = .orange
+        
         return true
     }
 

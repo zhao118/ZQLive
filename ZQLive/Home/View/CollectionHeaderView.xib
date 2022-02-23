@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="ZQLive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="327" height="53"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-QF-q5O">
+                    <rect key="frame" x="0.0" y="0.0" width="327" height="10"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="iyi-oC-cSf"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone.homebutton" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-2L-gZu">
+                    <rect key="frame" x="10" y="21" width="18" height="18"/>
+                    <color key="tintColor" red="0.83137254900000002" green="0.62352941179999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="dBo-Vy-oPi"/>
+                        <constraint firstAttribute="width" constant="18" id="jKI-2L-70o"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-sp-qxW">
+                    <rect key="frame" x="38" y="21" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M9-AT-SRk">
+                    <rect key="frame" x="257" y="15" width="60" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="zJq-V3-VaY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="更多 &gt;">
+                        <color key="titleColor" systemColor="labelColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="5M9-AT-SRk" firstAttribute="top" secondItem="vdX-QF-q5O" secondAttribute="bottom" constant="5" id="1VV-Iv-edr"/>
+                <constraint firstItem="kj2-sp-qxW" firstAttribute="leading" secondItem="KAF-2L-gZu" secondAttribute="trailing" constant="10" id="31s-9E-BQJ"/>
+                <constraint firstItem="KAF-2L-gZu" firstAttribute="top" secondItem="vdX-QF-q5O" secondAttribute="bottom" constant="11" id="9EM-tE-nAB"/>
+                <constraint firstItem="vdX-QF-q5O" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="BPM-5h-1qB"/>
+                <constraint firstItem="KAF-2L-gZu" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="10" id="H63-hn-igh"/>
+                <constraint firstItem="kj2-sp-qxW" firstAttribute="centerY" secondItem="KAF-2L-gZu" secondAttribute="centerY" id="P2k-iR-Bl9"/>
+                <constraint firstItem="vdX-QF-q5O" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="SsI-Ul-cYb"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="5M9-AT-SRk" secondAttribute="bottom" constant="5" id="U8B-Eg-6ff"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="5M9-AT-SRk" secondAttribute="trailing" constant="10" id="fOq-eg-KNA"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="vdX-QF-q5O" secondAttribute="trailing" id="wKA-Nn-ncm"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="KAF-2L-gZu" id="LTQ-hJ-J7n"/>
+                <outlet property="titleLabel" destination="kj2-sp-qxW" id="RAr-Yg-nMV"/>
+            </connections>
+            <point key="canvasLocation" x="141.30434782608697" y="87.388392857142847"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="iphone.homebutton" catalog="system" width="108" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
