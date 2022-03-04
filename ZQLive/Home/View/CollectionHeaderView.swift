@@ -9,6 +9,7 @@ import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
 
+    @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var iconImageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,5 +21,12 @@ class CollectionHeaderView: UICollectionReusableView {
             titleLabel.text = group?.tag_name
             iconImageView.image = UIImage(named: group?.icon_name ?? "morentupian")
         }
+    }
+}
+
+extension CollectionHeaderView {
+    //快速创建CollectionHeaderView对象的方法,从XIB中加载
+    class func collectionHeaderView() -> CollectionHeaderView{
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
     }
 }

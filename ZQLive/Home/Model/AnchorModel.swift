@@ -7,9 +7,9 @@
 
 import UIKit
 
-//room_list的值是一个字典,就该字典再创建一个模型对象.d20
+//以NSObject为基类，只是为了提供Objective-C API的使用入口
+//room_list的值是一个字典,就该字典再创建一个模型对象. 一个主播房间里的信息模数据型.d20
 class AnchorModel: NSObject {
-    
     //房间号
     var room_id: Int = 0
     //房间图片
@@ -19,7 +19,7 @@ class AnchorModel: NSObject {
     //房间名称
     var room_name: String = ""
     //主播昵称
-    var nickName = ""
+    var nickname = ""
     //观看人数
     var online = 0
     //所在的城市.请求的数据中没有城市的信息.d21

@@ -1,0 +1,160 @@
+
+
+    {
+        
+        "tag_name": "英雄联盟",
+        "tag_id" : 1,
+        "room_list" : [
+        {
+            "room_id"    :   8677964,
+                    
+            "show_time"    :    1645602915,
+                    
+            "vertical_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/8677964_1550.png/dy1",
+                    
+            "cate_id"    :    124,
+                    
+            "hot"    :    308111,
+                    
+            "avatar_small"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202104/ec6baca494e0474dbaa70e88240e0289_small.jpg",
+                    
+            "specific_status"    :    0,
+                    
+            "room_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/8677964_1550.png/dy1",
+                    
+            "room_name"    :    "直播】京都街景户外。回帰",
+                    
+            "game_name"    :    "户外",
+                    
+            "isVertical"    :    0,
+                    
+            "owner_uid"    :    359418519,
+                    
+            "ranktype"    :    0,
+                    
+            "nick_name"    :    "日本户外Kaz",
+                    
+            "online"    :    308111,
+                    
+            "show_status"    :    1,
+                    
+                    
+            "avatar_mid "   :    "https://apic.douyucdn.cn/upload/avatar_v3/202104/ec6baca494e0474dbaa70e88240e0289_middle.jpg"
+                    
+     
+        },
+        {
+            "room_id"    :    475252,
+                    
+            "show_time"    :    1645602914,
+                    
+            "vertical_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/475252_1541.png/dy1",
+                    
+            "cate_id"    :    1,
+                    
+            "hot"    :    1545605,
+                    
+            "avatar_small"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202004/31d1d439343b44ff91673fd4dce083b8_small.jpg",
+                    
+            "specific_status"    :    0,
+                    
+            "room_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/475252_1541.png/dy1",
+                    
+            "room_name"    :    "孙悟空：新版本，我无敌了",
+                    
+            "game_name"    :    "英雄联盟",
+                    
+            "isVertical"    :    0,
+                    
+            "owner_uid"    :    25332273,
+                    
+            "ranktype"    :    0,
+                    
+            "nick_name"    :    "孙悟空丨兰林汉",
+                    
+            "online"    :    1545605,
+                    
+            "show_status"    :    1,
+                    
+            "avatar_mid"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202004/31d1d439343b44ff91673fd4dce083b8_middle.jpg"
+                    
+    
+        },
+        {
+            "room_id"    :    3567314,
+                    
+            "show_time"    :    1645602913,
+                    
+            "vertical_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/3567314_1549.png/dy1",
+                    
+            "cate_id"    :    1,
+                    
+            "hot"    :    1395451,
+                    
+            "avatar_small"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202010/5f8b2bc0d0034d84b44409e742017b52_small.jpg",
+                    
+            "specific_status"    :    0,
+                    
+            "room_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/3567314_1549.png/dy1",
+                    
+            "room_name"    :    "峡谷之巅前十冲第一",
+                    
+            "game_name"    :    "英雄联盟",
+                    
+            "isVertical"    :    0,
+                    
+            "owner_uid"    :    14744449,
+                    
+            "ranktype"    :    0,
+                    
+            "nick_name"    :    "王纪超666",
+                    
+            "online"    :    1395451,
+                    
+            "show_status"    :    1,
+
+            "avatar_mid"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202010/5f8b2bc0d0034d84b44409e742017b52_middle.jpg"
+                
+
+        },
+        {
+            "room_id"    :    10028785,
+                    
+            "show_time"    :    1645602913,
+                    
+            "vertical_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/10028785_1551.png/dy1",
+                    
+            "cate_id"    :    1,
+                    
+            "hot"    :    1269083,
+                    
+            "avatar_small"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202105/fee76242c8984469a54d930c89779e60_small.jpg",
+                    
+            "specific_status"    :    0,
+                    
+            "room_src"    :    "https://rpic.douyucdn.cn/asrpic/220223/10028785_1551.png/dy1",
+                    
+            "room_name"    :    "安得广厦千万间,大庇天下寒士俱欢颜",
+                    
+            "game_name"    :    "英雄联盟",
+                    
+            "isVertical"    :    0,
+                    
+            "owner_uid"    :    9705423,
+                    
+            "ranktype"    :    0,
+                    
+            "nick_name"    :    "苏科大",
+                    
+            "online"    :    1269083,
+                    
+            "show_status"    :    1,
+                    
+            "avatar_mid"    :    "https://apic.douyucdn.cn/upload/avatar_v3/202105/fee76242c8984469a54d930c89779e60_middle.jpg"
+
+
+          }
+      ]
+   }
+    
+

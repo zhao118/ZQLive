@@ -13,6 +13,11 @@ let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
 let kTabBarH:CGFloat = 44 //下方工具栏的高度
 
+let kGameVCRecommendGameGiewH = 90
+
+
+
+
 //使用闭包创建属性.动态获取状态栏的高度(因为状态栏的高度不一样,需动态获取)
 let kStatusBarH: CGFloat = {
     
@@ -30,3 +35,9 @@ let kStatusBarH: CGFloat = {
     
 }()
 
+//MARK: - 图片名称常量
+let kDouYu = "dYou"
+
+//MARK: - cellID
+let kCollectionGameCell = "kCollectionGameCellID"
+let kGameVCCellID = "kGameVCCellID"

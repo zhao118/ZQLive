@@ -10,7 +10,7 @@ import UIKit
 //private:同一类中私有 fileprivate:同一文件(项目)中私有
 private let kTitleViewH: CGFloat = 60 //标签栏的Title的高度
 
-class HomeViewController: UIViewController {
+class HomeVC: UIViewController {
     
     //MARK: - 懒加载属性
     //使用闭包创建对象(分页栏对象)
@@ -38,9 +38,10 @@ class HomeViewController: UIViewController {
         //2.内容视图的子视图
         var childVCs:[UIViewController] = []
         
-        childVCs.append(RecommendVC()) //添加子控制器.d14
-        
-        for _ in 0..<3 {
+        childVCs.append(RecommendVC()) //添加"推荐"子控制器.d14
+        childVCs.append(GameVC()) //添加"游戏"子控制器.d70
+    
+        for _ in 0..<2 {
             let vc = UIViewController()
             //使用扩展的UIColor的自定义构造方法,使用随机数生成的颜色作为背景色.d10
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
@@ -52,7 +53,6 @@ class HomeViewController: UIViewController {
         
         pageContentView.delegate = self //协议传值x4
         
-
         return pageContentView
         
     }()
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
 }
 
 //MARK: - 设置UI界面
-extension HomeViewController {
+extension HomeVC {
     
     //设置UI
     private func setupUI() {
@@ -103,7 +103,7 @@ extension HomeViewController {
 
 //设置了当前类为PageTitleView对象的代理,需要遵守协议,并实现协议方法-p5.d11
 //HomeViewController来处理PageTitleView与PageContentView之间的逻辑(点击或滚动label显示相应的PageContentView).d11
-extension HomeViewController: PageTitleViewDelegate {
+extension HomeVC: PageTitleViewDelegate {
     
     //index:点击分页栏label时,接受从PageTitleView中通过协议传过来的点击的Label的index,再传给setCurrentIndex使用
     func pageTitleView(titleView: PageTitleView, selectedLabelIndex index: Int) {
@@ -116,7 +116,7 @@ extension HomeViewController: PageTitleViewDelegate {
 
 //MARK: - 遵守PageContentViewDelegate协议
 //协议传值x5
-extension HomeViewController: PageContentViewDelegate {
+extension HomeVC: PageContentViewDelegate {
     //实现方法,可以从该方法中的参数拿到传过来的值.并给PageTitleView使用.d12
     func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         

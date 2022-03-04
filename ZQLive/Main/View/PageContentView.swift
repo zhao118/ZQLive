@@ -20,6 +20,7 @@ class PageContentView: UIView {
     weak var delegate: PageContentViewDelegate? //协议传值x2
     
     //MARK: - 闭包创建懒加载属性.d10
+    //创建UICollectionView对象.
     private lazy var collectionView: UICollectionView = {[weak self] in //2.1解决闭包使用self引起的循环强引用.d11
         
         //1.创建UICollection对象必须创建layout(流式布局对象)

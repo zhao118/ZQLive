@@ -26,6 +26,9 @@ class NetworkTools {
     //教程中是parameters: [String: NSString]? = nil
     class func requestData(type: MethodType, USLString: String, parameters: [String: String]? = nil, finishedCallback: @escaping (_ result : Any) -> ()) {
         
+        
+        //@escaping-1.逃逸闭包的使用.如果是在这里,使用闭包参数,也就是该方法以内,就不需要让闭包逃逸
+        // finishedCallback(result)
         //1.获取类型
         let method = type == MethodType.GET ? HTTPMethod.get : HTTPMethod.post
         
@@ -37,7 +40,10 @@ class NetworkTools {
                 print(response.error!)
                 return
             }
+
             
+            //@escaping-2.现在是在另一个方法request的闭包中使用闭包finishedCallback,
+            //所以需要将方法requestData中的闭包参数逃逸,才能再这里使用,即requestData方法以外还能继续使用.d69
             //4.将结果回调出去
             finishedCallback(result)
         }

@@ -11,15 +11,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="ZQLive" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="717" height="579"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="v7Z-mM-8eB"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WbF-aX-DQL">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="170"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NMx-hp-l2e">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0qY-1G-nS8">
+                    <rect key="frame" x="287" y="142" width="123" height="28"/>
+                    <color key="currentPageIndicatorTintColor" red="0.83137254900000002" green="0.62352941179999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="BWf-fz-vDl"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
+            <constraints>
+                <constraint firstItem="BWf-fz-vDl" firstAttribute="bottom" secondItem="WbF-aX-DQL" secondAttribute="bottom" id="AR8-mh-4Fb"/>
+                <constraint firstItem="0qY-1G-nS8" firstAttribute="trailing" secondItem="BWf-fz-vDl" secondAttribute="trailing" constant="10" id="Gbk-A6-A4Z"/>
+                <constraint firstItem="WbF-aX-DQL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="REX-Qs-fUc"/>
+                <constraint firstItem="BWf-fz-vDl" firstAttribute="trailing" secondItem="WbF-aX-DQL" secondAttribute="trailing" id="U5X-8f-5PJ"/>
+                <constraint firstItem="BWf-fz-vDl" firstAttribute="bottom" secondItem="0qY-1G-nS8" secondAttribute="bottom" id="as8-64-yiC"/>
+                <constraint firstItem="WbF-aX-DQL" firstAttribute="leading" secondItem="BWf-fz-vDl" secondAttribute="leading" id="iPc-vi-ySQ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="264.49275362318843" y="-14.397321428571427"/>
+            <connections>
+                <outlet property="collectionView" destination="WbF-aX-DQL" id="b0u-ZY-qrm"/>
+                <outlet property="pageControl" destination="0qY-1G-nS8" id="Qei-qa-Tt8"/>
+            </connections>
+            <point key="canvasLocation" x="263.768115942029" y="-14.732142857142856"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

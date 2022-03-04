@@ -17,4 +17,11 @@ extension UIColor {
         self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)
     
     }
+    
+    //扩展UIColor一个获取随机颜色的方法.d70
+    class func randomColor()-> UIColor {
+        
+      return  UIColor(red:CGFloat(arc4random_uniform(255))/CGFloat(255.0), green:CGFloat(arc4random_uniform(255))/CGFloat(255.0), blue:CGFloat(arc4random_uniform(255))/CGFloat(255.0) , alpha: 1)
+        
+    }
 }

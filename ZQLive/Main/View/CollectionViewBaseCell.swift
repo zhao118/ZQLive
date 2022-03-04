@@ -33,7 +33,7 @@ class CollectionViewBaseCell: UICollectionViewCell {
             onlineBtn.setTitle(onlineStr, for: .normal)
             
             //昵称
-            nickName.text = anchor.nickName
+            nickName.text = anchor.nickname
            
             //封面图片.显示网络图片最好使用第三方框架(如Kingfisher).d22
             //注意这里是URL不是NSURL类型
