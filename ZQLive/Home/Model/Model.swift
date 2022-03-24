@@ -74,11 +74,9 @@ struct AnchorModel2: Codable {
 //轮播器模型对象
 //Codable-1.创建一个结构体类型的模型对象,实例化模型对象的方法,且该对象继承的是Codable
 struct CycleModel2: Codable{
-
+    
     var title: String?
     var pic_url: String?
-    
-   
     //主播信息对应的字典.JSON数据中room的值是一个对象,对象里面是字典(名称值对)
    var room: AnchorModel2?
     

@@ -37,7 +37,6 @@ class GameVC: UIViewController {
         //H1.创建HeaderView的Size;H2.注册HeaderView复用的标识符;H3.数据源方法中创建HeaderView.d72
         layout.headerReferenceSize = CGSize(width: kScreenW, height: 50)
         
-        
         //创建collectionView
         let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
@@ -51,7 +50,6 @@ class GameVC: UIViewController {
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         
         collectionView.register(UINib(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameVCCellID)//注册
-        
         
         return collectionView
     }()
@@ -75,6 +73,7 @@ class GameVC: UIViewController {
        
         let gameView = RecommendGameView.recommendGameView()
         gameView.frame = CGRect(x: 0, y: -CGFloat(kGameVCRecommendGameGiewH), width: kScreenW, height: CGFloat(kGameVCRecommendGameGiewH))
+        
         
         return gameView
     }()
@@ -124,7 +123,9 @@ extension GameVC{
             //展示常用游戏
             self.gameView.groups2 = self.gameViewModel.gameModels2
             
-        
+            //执行到此处说明网络数据请求已经完成,可以隐藏掉加载动画,并显示内容View.d83
+            //self.loadDataFinished()
+            
         }
     }
 }

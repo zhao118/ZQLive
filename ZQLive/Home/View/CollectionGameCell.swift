@@ -23,6 +23,7 @@ class CollectionGameCell: UICollectionViewCell {
         //监听属性的值的改变,由RecommendGameView中的数据源方法传递过来group的值
         didSet{
             
+          
             titleLabel.text = group?.title
            
             let gameIconURL = URL(string: (group?.room?.game_icon_url ?? "")!)

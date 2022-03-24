@@ -38,16 +38,10 @@ class HomeVC: UIViewController {
         //2.内容视图的子视图
         var childVCs:[UIViewController] = []
         
+        childVCs.append(PlayVC()) //添加娱乐控制器
         childVCs.append(RecommendVC()) //添加"推荐"子控制器.d14
         childVCs.append(GameVC()) //添加"游戏"子控制器.d70
-    
-        for _ in 0..<2 {
-            let vc = UIViewController()
-            //使用扩展的UIColor的自定义构造方法,使用随机数生成的颜色作为背景色.d10
-            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            
-            childVCs.append(vc)
-        }
+        childVCs.append(FunnyVC())//趣玩.d
         
         let pageContentView = PageContentView(frame: contentFrame, childVCs: childVCs, parentViewController: self)
         
@@ -61,6 +55,14 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //避免返回时，主页上面的导航栏的图标消失
+        self.navigationController?.navigationBar.isHidden = false
+      
+        
     }
     
 }
@@ -79,7 +81,7 @@ extension HomeVC {
         //2.添加TitleView
         self.view.addSubview(pageTitleView)
         
-        //3.添加PageContentView(里面包含一个ScrollView,ScrollView有四个视图控制器)
+        //3.添加PageContentView(里面包含一个ScrollView,ScrollView有四个视图控制器,推荐,游戏,娱乐,趣玩)
         self.view.addSubview(pageContentView)
        
     }

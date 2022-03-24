@@ -15,6 +15,16 @@ let kTabBarH:CGFloat = 44 //下方工具栏的高度
 
 let kGameVCRecommendGameGiewH = 90
 
+//PlayVC
+let kPlayItemW = (kScreenW - 3 * 10) / 2
+let KPlayNormalItemH = kPlayItemW * 3 / 4
+let kPlayItemMargin: CGFloat = 10
+let kPlayHeaderViewH: CGFloat = 50
+let kPlayHeaderViewID = "kPlayHeaderViewID"
+let kPlayCellID = "kPlayCellID"
+let kPlayCycleViewH: CGFloat = kScreenH * 3 / 16
+let kPlayCycleViewCellID = "kPlayCycleViewCellID"
+
 
 
 

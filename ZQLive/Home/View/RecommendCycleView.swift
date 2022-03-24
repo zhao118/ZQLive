@@ -15,9 +15,9 @@ class RecommendCycleView: UIView {
         
     //定时器.制作无线轮播器的自动滚动.d26
     var cycleTimer: Timer?
+    
     var cycleModels2: [CycleModel2]?{
         //从RecommendVC中的loadData()中设置cycleModels的值,并在该处进行监听.d24
-        
         didSet{
             //监听到属性cycleModels的值发生改变时,进行的操作
             collectionView.reloadData()
@@ -36,12 +36,15 @@ class RecommendCycleView: UIView {
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //从xib中开始加载时就执行.d23
-        //设置该控件不随着父控件的拉伸而拉伸,为了能正常显示轮播view.d23
+        /*从xib中开始加载时就执行
+        不能在该方法中设置itemSize,该方法是从XIB中加载的,所以这里拿到的是XIB中设置的view的大小,可以在layoutSubViews()中或协议方法中设置
+        设置该控件不随着父控件的拉伸而拉伸,为了能正常显示轮播view.d23  */
+
         autoresizingMask = AutoresizingMask(rawValue: .zero)
         
         collectionView.dataSource = self
@@ -49,21 +52,21 @@ class RecommendCycleView: UIView {
         //UICollectionViewDelegateFlowLayout的使用,它是继承UICollectionViewDelegate,故同样要设置delegate.d23
         collectionView.delegate = self
         
-        //默认也是允许分页的.XIB中也可以进行相应的属性设置.d23
+        //分页功能.滚动collectionView时,一个cell为一页.不会连续没有分界的滚动.d23
         collectionView.isPagingEnabled = true
         
         //滚动方向需要使用布局对象UICollectionViewFlowLayout来设置
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        //不能在此设置itemSize,因为该方法中是从XIB中加载时执行,所以这里拿到的是XIB中设置的view的大小.d23
+        //layout.itemSize = collectionView.bounds.size
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         
-
         //没有创建关联的UICollectionViewCell对象,就直接使用UICollectionViewCell.self.d23
         collectionView.register(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellID)
         
     }
-    
     
     
 }
@@ -92,9 +95,10 @@ extension RecommendCycleView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellID, for: indexPath) as! CollectionCycleCell
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
-         
-        //实现无线滚动器循环滚动.d24.d25.d26
+      
+        //渲染cell,并实现无线滚动器循环滚动.d24.d25.d26
+        
+        //因为有(cycleModels2?.count ?? 0) * 10000,所以为了防止数据越界,需要进行该处理.d26
         cell.cycleModel2 = cycleModels2![indexPath.item % cycleModels2!.count]
         
         return cell
@@ -118,9 +122,9 @@ extension RecommendCycleView: UICollectionViewDelegateFlowLayout{
 }
 
 //遵守UICollectionView的代理协议
+//监听CollectionView的滚动.用于制作pageControll的滚动.d25
 extension RecommendCycleView: UICollectionViewDelegate {
     
-    //监听CollectionView的滚动.用于制作pageControll的滚动.d25
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //1.获取滚动的偏移量,只是在X轴方向滚动
         let offsetX = scrollView.contentOffset.x

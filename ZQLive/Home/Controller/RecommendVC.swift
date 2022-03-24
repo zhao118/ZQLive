@@ -9,9 +9,6 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-
-
-
 //item之间的列间距,宽,高(大概估计的值).d14
 private let kItemMargin: CGFloat = 10
 private let kItemW = (kScreenW - 3 * 10) / 2
@@ -20,20 +17,18 @@ private let kPrettyItemH = kItemW * 4 / 3
 private let kCycleViewH: CGFloat = kScreenH * 3 / 16 //轮动器的大概高度.d23
 private let kGameViewH: CGFloat = 90 //估计的值
 
-
 private let kNormalCellID = "kNormalCellID"
 private let kHeaderViewH: CGFloat = 50
 private let kHeaderViewID = "kHeaderViewID"
 private let kPrettyCellID = "kPrettyCellID"
 
 //"推荐"对应的控制器,需要将该控制器加入到UICollectionView的cell(item)中.d14
-class RecommendVC: UIViewController {
+//继承BaseVC父类,里面封装了加载动画功能.d83
+class RecommendVC: BaseVC {
     //MARK: - 懒加载属性
     //通过闭包创建一个懒加载的view的对象,然后再addSubview在当前的view上面
     //MVVM5.2 Recommend控制器对应的ViewModel属性(MVVM模式),用来管理网络请求.d19
     private lazy var recommendVM = RecommendViewModel()
-    
-    
     
     //创建需要添加在当前控制器中的view对象
     private lazy var collectionView: UICollectionView = { [weak self] in
@@ -83,7 +78,7 @@ class RecommendVC: UIViewController {
         let cycleView = RecommendCycleView.recommendCycleView()
         //cycleView.translatesAutoresizingMaskIntoConstraints = false
         //设置view的frame.任何一个控件都需要frame才能显示
-        //轮播器是加在collectionView里的,且是在它的最上面,collectionCell的y坐标为0,所以它的y为负值.d23
+        //轮播器是加在collectionView里的,且是在它的最上面,collectionCell的y坐标为0,所以相对于父视图collectionView,它的y为负值.d23
         //轮播器下面又添加了RecommendGameView,所以轮播器的y值需要加上gameView的高
         cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
@@ -126,19 +121,23 @@ class RecommendVC: UIViewController {
 extension RecommendVC {
     
     //在当前控制器中添加UIView对象,添加之后才能进行显示.
-    private func setupUI() {
-        
+    //父类中也有该方法,此处覆写父类中的该方法,同时也需要调用父类中的该方法,用于使用父类中改方法功能.d83
+    //注意0.1.2的执行顺序不能调换.d83
+    override func setupUI() {
+        //0.给父类中的内容view的引用赋值,用于一开始加载完数据之前先隐藏掉collectionView.d83
+        contentView = collectionView
         //1.将UICollectionView添加到控制器的view中
         self.view.addSubview(collectionView)
+        //2.调用并执行父类中的方法
+        super.setupUI()
         
-        //2.将CycleView添加到UICollectionView中,因为它可以随着collectionView一起向上滚动,不能直接加到根视图RecommendVC上.d23
+        //3.将CycleView添加到UICollectionView中,因为它可以随着collectionView一起向上滚动,不能直接加到根视图RecommendVC上.d23
         collectionView.addSubview(cycleView)
         
-        
-        //3.将RecommendGameView对象添加到collectionView中.d27
+        //4.将RecommendGameView对象添加到collectionView中.d27
         collectionView.addSubview(gameView)
         
-        //4.设置collectionview的内边距，让轮播器一直都处于显示状态，而不是向下拖动才显示,也可设置带闭包中.d23
+        //5.设置collectionview的内边距，让轮播器一直都处于显示状态，而不是向下拖动才显示,也可设置带闭包中.d23
         //让collectionview的内边距去显示cycleView和gameView
         collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
         
@@ -171,8 +170,8 @@ extension RecommendVC {
             //将数据传递给RecommendGameView,使用轮播器中的数据来填充RecommendGameView.d28
             self.gameView.groups2 = self.recommendVM.cycleModels2
             
-            
-            
+            //执行到此处说明网络数据请求已经完成,可以隐藏掉加载动画,并显示内容View.d83
+            self.loadDataFinished()
         }
     
     }
@@ -194,7 +193,6 @@ extension RecommendVC: UICollectionViewDataSource {
         //0.取出模型对象,从推荐的主播组中.d22
         let group = recommendVM.anchorGroups[indexPath.section]
         let anchor = group.anchors[indexPath.item]
-        
         
         var cell: CollectionViewBaseCell!
         //取出cell(有两种cell一种最上面普通的cell,一种颜值里面的cell).d16.d22
@@ -251,6 +249,7 @@ extension RecommendVC: UICollectionViewDataSource {
         headerView.group = recommendVM.anchorGroups[indexPath.section]
         
         
+        
         return headerView
     }
 }
@@ -295,5 +294,17 @@ extension RecommendVC {
         let iconURL = URL(string: jsonToModel.roomList[index].avatarSmall)
         
         cell.iconImageView.kf.setImage(with: iconURL)
+    }
+}
+
+extension RecommendVC: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      
+        let roomVC = RoomNormalVC()
+        
+        navigationController?.pushViewController(roomVC, animated: true)
+        
+        
     }
 }
