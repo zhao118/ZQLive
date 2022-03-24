@@ -14,7 +14,6 @@ class PlayViewModel{
     
     var playModels: [PlayModel] = [ ]
     
-    
     let parameters = ["limit":"4","offset": "0","time": NSDate.getCurrentTIme()]
 }
 
@@ -37,19 +36,22 @@ extension PlayViewModel {
                     
                     let decoder = JSONDecoder()
                    
-                    
                     let data = try JSONSerialization.data(withJSONObject: dic)
-                    
+                    //每次循环转换一个model
                     let model = try decoder.decode(PlayCycleModel.self, from: data)
                     
                     let model2 = try decoder.decode(PlayModel.self, from: data)
                     
                     self.playCycleModels.append(model)
+                    
                     self.playModels.append(model2)
                     
                     print("playCycleModels.count 个数为: \(playCycleModels.count)")
-                    print(playModels.count)
                     print(model.tag_name)
+                    
+//                    print("model.room_list[1].room_src的值为：\( model.room_list[1].room_src ?? "")")
+//                   
+                    
                     
                 }catch let error{
                     

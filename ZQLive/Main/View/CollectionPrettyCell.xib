@@ -44,7 +44,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds " value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dylogo" translatesAutoresizingMaskIntoConstraints="NO" id="Hyr-Gt-hMZ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="douyu-3" translatesAutoresizingMaskIntoConstraints="NO" id="Hyr-Gt-hMZ">
                         <rect key="frame" x="0.0" y="0.0" width="278" height="217"/>
                     </imageView>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng8-nw-mH7">
@@ -84,7 +84,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dylogo" width="33" height="33"/>
+        <image name="douyu-3" width="33" height="33"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
     </resources>
 </document>

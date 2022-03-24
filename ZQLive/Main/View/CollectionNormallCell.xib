@@ -30,7 +30,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dylogo" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-3z-Oa5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="douyu-3" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-3z-Oa5">
                         <rect key="frame" x="0.0" y="0.0" width="283" height="137"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -81,7 +81,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dylogo" width="33" height="33"/>
+        <image name="douyu-3" width="33" height="33"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

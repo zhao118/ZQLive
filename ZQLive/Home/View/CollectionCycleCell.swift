@@ -24,8 +24,8 @@ class CollectionCycleCell: UICollectionViewCell {
             
             let iconURL = URL(string: cycleModel2?.pic_url ?? "")
             //使用Kingfisher加载网络图片.也可以使用可以设置占位符的API
-            //iconImageView.kf.setImage(with: iconURL, placeholder: UIImage(named: kDouYu))
-            iconImageView.kf.setImage(with: iconURL)
+            iconImageView.kf.setImage(with: iconURL, placeholder: UIImage(named: kDouYu))
+            //iconImageView.kf.setImage(with: iconURL)
             
             
         }

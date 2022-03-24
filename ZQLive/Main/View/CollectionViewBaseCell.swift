@@ -40,10 +40,6 @@ class CollectionViewBaseCell: UICollectionViewCell {
             guard let iconURL = URL(string: anchor.vertical_src) else { return }
         
             iconImageView.kf.setImage(with: iconURL)
-          
-          
-            
-
             
         }
     }

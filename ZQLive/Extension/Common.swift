@@ -46,7 +46,7 @@ let kStatusBarH: CGFloat = {
 }()
 
 //MARK: - 图片名称常量
-let kDouYu = "dYou"
+let kDouYu = "douyu-3"
 
 //MARK: - cellID
 let kCollectionGameCell = "kCollectionGameCellID"

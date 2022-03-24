@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="315" height="198"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dYou" translatesAutoresizingMaskIntoConstraints="NO" id="udE-tE-RSQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="douyu-3" translatesAutoresizingMaskIntoConstraints="NO" id="udE-tE-RSQ">
                         <rect key="frame" x="0.0" y="0.0" width="315" height="198"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1D-ec-fh8">
@@ -57,6 +57,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dYou" width="280" height="120"/>
+        <image name="douyu-3" width="33" height="33"/>
     </resources>
 </document>

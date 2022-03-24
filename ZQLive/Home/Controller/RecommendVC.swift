@@ -208,8 +208,6 @@ extension RecommendVC: UICollectionViewDataSource {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormallCell
             cell.anchor = anchor
             
-            
-            
             if indexPath.item == 0{
                 setCellImageNickNameOnLineTitle(index: 0, cell: cell as! CollectionNormallCell)
 

@@ -20,8 +20,6 @@ class PlayVC: UIViewController {
         
     }
     
-    
-    
     //创建需要添加在当前控制器中的view对象
     @objc lazy var collectionView: UICollectionView = { [weak self] in
         //创建布局.d14

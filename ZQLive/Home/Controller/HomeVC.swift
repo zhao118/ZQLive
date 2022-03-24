@@ -38,8 +38,8 @@ class HomeVC: UIViewController {
         //2.内容视图的子视图
         var childVCs:[UIViewController] = []
         
-        childVCs.append(PlayVC()) //添加娱乐控制器
         childVCs.append(RecommendVC()) //添加"推荐"子控制器.d14
+        childVCs.append(PlayVC()) //添加娱乐控制器
         childVCs.append(GameVC()) //添加"游戏"子控制器.d70
         childVCs.append(FunnyVC())//趣玩.d
         
@@ -54,6 +54,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         setupUI()
     }
     
@@ -89,16 +90,18 @@ extension HomeVC {
     //设置导航栏UI.d7
     private func setupNavigationBar() {
         //导航栏左侧图标
-        navigationItem.leftBarButtonItem = UIBarButtonItem.creatItem(imageName: "dylogo")
+        navigationItem.leftBarButtonItem = UIBarButtonItem.creatItem(imageName: "douyu-3")
         
         //右侧添加多个item,分别设置正常状态和点击高亮状态时的图片.大小为40x40.d7
         let size = CGSize(width: 40, height: 40)
         //扩展UIBarButtonItem的类方法creatItem.d7
-        let historyItem = UIBarButtonItem.creatItem(imageName: "history", highImageName: "dylogo", size: size)
-        let searchItem = UIBarButtonItem.creatItem(imageName: "qrcode", highImageName: "qrcode", size: size)
-        let qrcodeItem = UIBarButtonItem.creatItem(imageName: "search", highImageName: "search", size: size)
+        //let historyItem = UIBarButtonItem.creatItem(imageName: "history", highImageName: "dylogo", size: size)
+        let searchItem = UIBarButtonItem.creatItem(imageName: "qrcode-2", highImageName: "qrcode-2", size: size)
         
-        navigationItem.rightBarButtonItems = [searchItem,qrcodeItem,historyItem]
+        //let qrcodeItem = UIBarButtonItem.creatItem(imageName: "search", highImageName: "search", size: size)
+        
+        navigationItem.rightBarButtonItems = [searchItem]
+        navigationController?.navigationBar.barTintColor = .white
     }
     
 }
